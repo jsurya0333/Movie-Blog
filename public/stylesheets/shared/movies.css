@@ -1,0 +1,72 @@
+:root{
+    --movie-cover-width : 200px;
+    --movie-cover-width-large :324px;
+    --movie-cover-aspect-ratio :0.74;
+}
+
+.movie-cover{
+    width: var(--movie-cover-width);
+    height:calc(var(--movie-cover-width) / var(--movie-cover-aspect-ratio) );
+}
+
+.movie-cover-large{
+    --movie-cover-width:var(--movie-cover-width-large)
+}
+
+.movie-grid{
+    display: grid;
+    justify-content: center;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, var(--movie-cover-width));
+}
+
+.movie-grid-large{
+    grid-template-columns: repeat(auto-fill, var(--movie-cover-width-large)); 
+}
+
+.movie-details{
+    display: flex;
+}
+
+.movie-details-label{
+    font-size: 1.2rem;
+    font-weight:500;
+    align-self: flex-start;
+}
+
+.movie-details-grid{
+    display: grid;
+    align-content:flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+    margin-left: 2rem;
+}
+
+.movie-details-btn-grid{
+    display: grid;
+    align-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    grid-template-areas:
+      'posts'
+      'director';
+    grid-gap: .4rem;
+    margin-top: .4rem; 
+}
+
+.movie-details-edit-grid{
+    display: grid;
+    align-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    grid-template-areas:
+      'edit delete';
+    grid-gap: .4rem;
+    margin-top: .4rem; 
+}
+
+.movie-details-director-button{
+    grid-area: director;
+    justify-self: stretch;
+}

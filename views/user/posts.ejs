@@ -1,0 +1,7 @@
+<%- include('../partials/header.ejs') %>
+<% if(postedByUser.length > 0) { %>
+    <h2 class="page-header">Other Posts By <%= user.name %> </h2>
+      <%- include('../partials/movieGrid', { movies: postedByUser}) %> 
+  <% }else{ %>
+  <h2><%= user.name %> has no posts yet </h2>
+<% } %>  

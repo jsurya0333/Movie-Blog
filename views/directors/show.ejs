@@ -1,0 +1,6 @@
+<%- include('../partials/header.ejs') %>
+
+<% if(moviesByDirector.length > 0) { %>
+  <h2 class="page-header">Movies By Director <%= director.name %></h2>
+    <%- include('../partials/movieGrid', { movies: moviesByDirector }) %> 
+<% } %> 

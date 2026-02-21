@@ -1,0 +1,9 @@
+.director-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+}
+
+.director-name{
+    font-size: 1.7rem;
+}

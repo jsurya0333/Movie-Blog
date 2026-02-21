@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+<% if(movies.length > 0) { %>
+    <h2 class="page-header">My Posts</h2>
+    <% movies.forEach(movie => { %>
+        <div class="movie-details"> 
+            <div>
+              <img class="movie-cover" src="<%= movie.coverImagePath %> "> 
+              <div class="movie-details-edit-grid">
+                <a class="btn btn-primary" href="/movies/<%= movie.id %>/edit ">Edit</a>
+                <%- include('../partials/deleteForm', {url : `/movies/${movie.id}` }) %>
+              </div>
+            </div>
+            <div class="movie-details-grid">
+                <div class="movie-details-label">Movie name :</div>
+                <div><%= movie.title %></div>
+                <div class="movie-details-label">Director :</div>
+                <div><%= movie.director.name %></div>
+                <div class="movie-details-label">Release Date :</div>
+                <div><%= movie.releaseDate.toDateString() %></div>
+                <div class="movie-details-label">Run Time :</div>
+                <div><%= movie.runTime %></div>
+                <div class="movie-details-label">Description :</div>
+                <div><%= movie.description %></div>
+            </div>
+          </div>
+         <br>
+         <br>
+    
+         <% }) %>
+  <% }else{ %> 
+
+    <h1>No Posts Available</h1>
+  <% } %> 
